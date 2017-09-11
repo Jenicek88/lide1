@@ -26,7 +26,7 @@ public interface ClovekRepository extends CrudRepository<Clovek,Integer> {
 	List<Clovek> najdiPodleVekuAPohlavi(@Param("vek") Integer vek, @Param("pohlavi") String pohlavi);
 
 	@Query("FROM Clovek c where c.heslo=:heslo AND c.nick=:nick")
-	List<Clovek> najdiPodleHesla(String heslo, String nick);
+	List<Clovek> najdiPodleHesla(@Param("heslo") String heslo, @Param("nick") String nick);
 	
 	@Query("FROM Clovek c where c.nick=:nick")
 	List<Clovek> najdiPodleNick(@Param("nick") String nick);
